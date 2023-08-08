@@ -12,7 +12,7 @@ const WeatherBar = () => {
     return fetch(url)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         const weatherData = {
           temperature: data.main.temp,
           condition: data.weather[0].main,
@@ -32,9 +32,9 @@ const WeatherBar = () => {
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
-        console.log("HELLo");
+        // console.log("HELLo");
         let list = data.list;
-        console.log("############");
+        // console.log("############");
         let weatherString = [];
         list.forEach((obj) => {
           let date = new Date(obj.dt * 1000);
@@ -54,7 +54,7 @@ const WeatherBar = () => {
           }
         });
 
-        console.log(weatherString.join(" "));
+        // console.log(weatherString.join(" "));
         setWeatherData(weatherString.join(" "));
       });
   };
