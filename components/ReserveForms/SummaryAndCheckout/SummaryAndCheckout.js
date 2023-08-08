@@ -8,6 +8,7 @@ import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import styles from "../../../styles/bookform.module.css";
+import star from '../../../public/star.png'
 
 const SummaryAndCheckout = (props) => {
   const { count, setCount, paymentStatus, setPaymentStatus, tourData } = props;
@@ -33,7 +34,8 @@ const SummaryAndCheckout = (props) => {
     discount,
   } = count;
 
-  console.log("Duration:", duration);
+  // console.log("Duration:", duration);
+  console.log("TOUR DATA:", tourData.rating);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -280,7 +282,7 @@ const SummaryAndCheckout = (props) => {
                         justifyContent: "right",
                       }}
                     >
-                      Ratings
+                     <img src="starLogo.svg" height="20px" width="20px"  alt="rating" /> <div style={{paddingRight : "10px"}}>  </div> {  tourData.rating}
                     </div>
                   </div>
 
@@ -288,10 +290,15 @@ const SummaryAndCheckout = (props) => {
                     <div
                       className="col-6"
                       style={{
-                        fontWeight: 500,
+                        fontWeight: 700,
                       }}
                     >
-                      Date
+                      Date: {`${new Date(count.tourDate).toLocaleString("en-US", {
+                        month: "short",
+                        day: "2-digit",
+                        year: "numeric",
+                        weekday: "short",
+                        })}`}
                     </div>
                     <div
                       className="col-6 d-flex"
@@ -300,11 +307,7 @@ const SummaryAndCheckout = (props) => {
                         fontWeight: 700,
                       }}
                     >
-                      {`${new Date(count.tourDate).toLocaleString("en-US", {
-                        month: "short",
-                        day: "2-digit",
-                        year: "numeric",
-                        weekday: "short",
+                      Time: {`${new Date(count.tourDate).toLocaleString("en-US", {
                         hour: "2-digit",
                         hour12: false,
                         minute: "2-digit",
