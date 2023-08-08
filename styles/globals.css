@@ -555,3 +555,14 @@ a {
   background-color: rgb(244, 244, 244) !important;
   border: medium none !important;
 }
+
+.cityStateZip{
+  padding: 0;
+
+}
+
+.checkout-section{
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}

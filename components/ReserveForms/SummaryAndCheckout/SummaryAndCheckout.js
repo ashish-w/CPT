@@ -484,7 +484,7 @@ const SummaryAndCheckout = (props) => {
                 style={{
                   color: "#1b3d02",
                   backgroundColor: "#5ba205",
-                  height: 1,
+                  height: "2px",
                   width: "100%",
                   borderRadius: "2px",
                 }}
@@ -563,7 +563,7 @@ const SummaryAndCheckout = (props) => {
                   placeholder="City"
                 />
               </div>
-              <div className="col-4">
+              <div className="col-4 cityStateZip">
                 <input
                   style={{
                     borderRadius: "20px",
@@ -605,6 +605,21 @@ const SummaryAndCheckout = (props) => {
                 tourData={tourData}
               />
             </div>
+
+
+            <div className="checkout-section text-right pt-3">
+          <LazyLoadImage
+            className="mr-4"
+            width="100"
+            alt="masterCard"
+            src="/images/visamastercard.webp"
+          />
+
+          <button type="submit" className="btn-reserve text-uppercase">
+            Finish Order
+          </button>
+        </div>
+
           </div>
 
           {/* <div className="col-xs-12 col-lg-6">
@@ -694,20 +709,9 @@ const SummaryAndCheckout = (props) => {
               {discount && "You've received " + discount + "% discount!"}
             </p>
             <p className="error">{error}</p>
-          </div> */}
+                </div> */}
         </div>
-        <div className="checkout-section text-right pt-3">
-          <LazyLoadImage
-            className="mr-4"
-            width="100"
-            alt="masterCard"
-            src="/images/visamastercard.webp"
-          />
-
-          <button type="submit" className="btn-reserve text-uppercase">
-            Finish Order
-          </button>
-        </div>
+        
       </form>
     </div>
   );
